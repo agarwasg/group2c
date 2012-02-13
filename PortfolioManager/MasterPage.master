@@ -1,0 +1,96 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+    <link href="Styles.css" rel="stylesheet" type="text/css" />
+     <style type="text/css">
+         .style3
+         {
+             width: 403px;
+         }
+         .style4
+         {
+             width: 470px;
+         }
+         .style5
+         {
+             height: 15px;
+         }
+         .style6
+         {
+             width: 470px;
+             height: 15px;
+         }
+     </style>
+     <div id="Header"><a id="A1" class="HeaderLink" href="~/" runat="server">
+        <asp:Image ID="Image1" runat="server" Height="134px" 
+            ImageUrl="~/header.JPG" Width="988px" ImageAlign="Top" TabIndex="1" />
+        </a></div>
+    
+</head>
+<body bgcolor="#E1FFC4">
+    <form id="form1" runat="server">
+    
+    
+    <table style="height: 425px; width: 759px;">
+    <tr bgcolor="#006600" style="color: #FFFFFF">
+    
+    <td class="style5">
+         <%--<asp:Menu ID="Menu2" runat="server" Orientation="Horizontal" 
+          StaticEnableDefaultPopOutImage="False" Font-Names="Georgia" 
+           ForeColor="White" DataSourceID="SiteMapDataSource1" >
+        </asp:Menu>
+        <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="false"/> --%>
+        <span class="breadcrumb" style="color: #FFFFFF">  
+         <asp:SiteMapPath ID="SiteMapPath1" runat="server" Font-Names="Georgia" 
+             ForeColor="White">
+             <NodeStyle ForeColor="White" />
+         </asp:SiteMapPath> </span>
+    </td>
+    <td class="style6">
+    <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" StaticEnableDefaultPopOutImage="False">
+        <StaticMenuItemStyle ItemSpacing="40px" Font-Names="Georgia" ForeColor="White" Font-Bold="True" />
+         <Items>
+        <asp:MenuItem Text="About Portfolio Manager" Value="About PM" NavigateUrl="~/AboutPM.aspx"></asp:MenuItem>
+        <asp:MenuItem Text="Contact Us" Value="Contact Us" NavigateUrl="~/Contactus.aspx"></asp:MenuItem>
+        </Items>
+        </asp:Menu>
+        
+    </td>
+    <td class="style5">
+    <asp:Button runat="server" Text="Logout" ID="btnLogout" Font-Names="Georgia" 
+            onclick="btnLogout_Click" style="margin-left: 0px" Visible="False" 
+            Width="88px" />
+    </td>
+    
+    </tr>
+    
+    <tr>
+    <td class="style3">
+     <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+            <asp:Panel ID="Panel1" runat="server" Height="403px" Width="523px">
+                
+            
+            </asp:Panel>
+            
+        </asp:ContentPlaceHolder>
+    </td>
+    <td class="style4">
+    <asp:ContentPlaceHolder id="ContentPlaceHolder2" runat="server">
+            <asp:Panel ID="Panel2" runat="server" Height="403px" Width="523px">
+                
+            
+            </asp:Panel>
+            
+        </asp:ContentPlaceHolder>
+    </td>
+    </tr>
+    </table>
+       
+    
+    </form>
+</body>
+</html>

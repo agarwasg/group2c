@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+    <!--<siteMapNode url="~/Default.aspx" title="Home"  description="">-->
+        <siteMapNode url="~/CustomerPortfolio.aspx" title="Customer Portfolio"  description="" >
+        <siteMapNode url="~/Contactus.aspx" title="Contact Us"  description="" />
+        <siteMapNode url="~/AboutPM.aspx" title="About Portfolio Manager"  description="" />
+      <siteMapNode url="~/DisplayStock.aspx" title="Display Stock"  description="" >
+        <siteMapNode url="~/DisplayDetailStock.aspx" title="Stock Detail"  description="" />
+      </siteMapNode>
+        <siteMapNode url="~/RemoveStockFromPortfolio.aspx" title="Remove Stock"  description="" />
+        <siteMapNode url="~/SearchStock.aspx" title="Search Stock"  description="" />
+        <siteMapNode url="~/Employeedetail.aspx" title="Employee Detail"  description="" />
+        <siteMapNode url="~/GetSummarybyusername" title="Summary info"  description="" />
+    </siteMapNode>
+</siteMap>

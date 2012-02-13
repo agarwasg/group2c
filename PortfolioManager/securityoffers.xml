@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Stocks>
+  <Stock>
+    <Ticker>HMC</Ticker>
+    <Cusip>438128.30</Cusip>
+    <Volume>1939980000</Volume>
+    <EPS>1.66</EPS>
+    <Sector>Automobile Manufacturing</Sector>
+    <CompanyName>Honda Motor Company Ltd.</CompanyName>
+    <Country>JAPAN</Country>
+  </Stock>
+</Stocks>

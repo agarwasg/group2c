@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Portfolio>
+  <Stock>
+    <Ticker>GOOG</Ticker>
+    <CompanyName>Google</CompanyName>
+    <Country>UNITED STATES</Country>
+  </Stock>
+  <Stock>
+    <Ticker>HPQ</Ticker>
+    <CompanyName>Hewlett-Packard Co</CompanyName>
+    <Country>UNITED STATES</Country>
+  </Stock>
+</Portfolio>

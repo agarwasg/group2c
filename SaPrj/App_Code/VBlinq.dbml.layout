@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="VBlinq">
+  <DataContextMoniker Name="/VBlinqDataContext" />
+  <nestedChildShapes>
+    <classShape Id="677ac267-e100-4d1e-87e2-35814a19f4ae" absoluteBounds="6.25, 2.5, 2, 2.9039737955729166">
+      <DataClassMoniker Name="/VBlinqDataContext/Player" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6bbcb569-0173-44fa-82aa-60cabfb885c1" absoluteBounds="6.265, 2.96, 1.9700000000000002, 2.3439737955729165" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="89c042d2-2442-4744-8ca6-89aad40c0748" absoluteBounds="0.75, 3.375, 2, 1.0961531575520835">
+      <DataClassMoniker Name="/VBlinqDataContext/Level" />
+      <nestedChildShapes>
+        <elementListCompartment Id="148d3742-0e9e-4fea-b887-dd7ac26af0a2" absoluteBounds="0.765, 3.835, 1.9700000000000002, 0.53615315755208326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9f267c67-051f-48e8-8d66-d5b15b624b62" absoluteBounds="3.5, 3, 2, 2.0822371419270826">
+      <DataClassMoniker Name="/VBlinqDataContext/Team" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f4c2d41a-eb19-4649-9778-aa9bce9459a1" absoluteBounds="3.515, 3.46, 1.9700000000000002, 1.5222371419270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.75 : 4.47115315755208); (1.75 : 5.27435546875); (6.25 : 5.27435546875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/VBlinqDataContext/Level/Level_Player" />
+      <nodes>
+        <classShapeMoniker Id="89c042d2-2442-4744-8ca6-89aad40c0748" />
+        <classShapeMoniker Id="677ac267-e100-4d1e-87e2-35814a19f4ae" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 4.04111857096354); (6.25 : 4.04111857096354)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/VBlinqDataContext/Team/Team_Player" />
+      <nodes>
+        <classShapeMoniker Id="9f267c67-051f-48e8-8d66-d5b15b624b62" />
+        <classShapeMoniker Id="677ac267-e100-4d1e-87e2-35814a19f4ae" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 3.92307657877604); (3.5 : 3.92307657877604)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/VBlinqDataContext/Level/Level_Team" />
+      <nodes>
+        <classShapeMoniker Id="89c042d2-2442-4744-8ca6-89aad40c0748" />
+        <classShapeMoniker Id="9f267c67-051f-48e8-8d66-d5b15b624b62" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

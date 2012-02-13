@@ -1,0 +1,534 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetStockInfoByCompanyName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CompanyName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStockInfoByCompanyNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStockInfoByCompanyNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStockInfoByCUSIP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CUSIP" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStockInfoByCUSIPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStockInfoByCUSIPResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStockInfoByTicker">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Ticker" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStockInfoByTickerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStockInfoByTickerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCountriesByCompanyName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CompanyName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCountriesByCompanyNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCountriesByCompanyNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPortfolioByUserName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPortfolioByUserNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPortfolioByUserNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsValidUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsValidUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IsValidUserResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddStockToCustomerPortfolio">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CompanyName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CountryName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddStockToCustomerPortfolioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddStockToCustomerPortfolioResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveStockFromCustomerPortfolio">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CompanyName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CountryName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveStockFromCustomerPortfolioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RemoveStockFromCustomerPortfolioResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmployeeIDByUserName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmployeeIDByUserNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEmployeeIDByUserNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStockPairInformation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Ticker1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ticker2" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStockPairInformationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStockPairInformationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmployeeSummaryByName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmployeeSummaryByNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEmployeeSummaryByNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmployeeDetailByEmpID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmpID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmployeeDetailByEmpIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEmployeeDetailByEmpIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetStockInfoByCompanyNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStockInfoByCompanyName" />
+  </wsdl:message>
+  <wsdl:message name="GetStockInfoByCompanyNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStockInfoByCompanyNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStockInfoByCUSIPSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStockInfoByCUSIP" />
+  </wsdl:message>
+  <wsdl:message name="GetStockInfoByCUSIPSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStockInfoByCUSIPResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStockInfoByTickerSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStockInfoByTicker" />
+  </wsdl:message>
+  <wsdl:message name="GetStockInfoByTickerSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStockInfoByTickerResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCountriesByCompanyNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCountriesByCompanyName" />
+  </wsdl:message>
+  <wsdl:message name="GetCountriesByCompanyNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCountriesByCompanyNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPortfolioByUserNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPortfolioByUserName" />
+  </wsdl:message>
+  <wsdl:message name="GetPortfolioByUserNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPortfolioByUserNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsValidUserSoapIn">
+    <wsdl:part name="parameters" element="tns:IsValidUser" />
+  </wsdl:message>
+  <wsdl:message name="IsValidUserSoapOut">
+    <wsdl:part name="parameters" element="tns:IsValidUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddStockToCustomerPortfolioSoapIn">
+    <wsdl:part name="parameters" element="tns:AddStockToCustomerPortfolio" />
+  </wsdl:message>
+  <wsdl:message name="AddStockToCustomerPortfolioSoapOut">
+    <wsdl:part name="parameters" element="tns:AddStockToCustomerPortfolioResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveStockFromCustomerPortfolioSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveStockFromCustomerPortfolio" />
+  </wsdl:message>
+  <wsdl:message name="RemoveStockFromCustomerPortfolioSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveStockFromCustomerPortfolioResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeeIDByUserNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEmployeeIDByUserName" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeeIDByUserNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEmployeeIDByUserNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStockPairInformationSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStockPairInformation" />
+  </wsdl:message>
+  <wsdl:message name="GetStockPairInformationSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStockPairInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeeSummaryByNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEmployeeSummaryByName" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeeSummaryByNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEmployeeSummaryByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeeDetailByEmpIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEmployeeDetailByEmpID" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeeDetailByEmpIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEmployeeDetailByEmpIDResponse" />
+  </wsdl:message>
+  <wsdl:portType name="PortfolioServiceSoap">
+    <wsdl:operation name="GetStockInfoByCompanyName">
+      <wsdl:input message="tns:GetStockInfoByCompanyNameSoapIn" />
+      <wsdl:output message="tns:GetStockInfoByCompanyNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStockInfoByCUSIP">
+      <wsdl:input message="tns:GetStockInfoByCUSIPSoapIn" />
+      <wsdl:output message="tns:GetStockInfoByCUSIPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStockInfoByTicker">
+      <wsdl:input message="tns:GetStockInfoByTickerSoapIn" />
+      <wsdl:output message="tns:GetStockInfoByTickerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCountriesByCompanyName">
+      <wsdl:input message="tns:GetCountriesByCompanyNameSoapIn" />
+      <wsdl:output message="tns:GetCountriesByCompanyNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPortfolioByUserName">
+      <wsdl:input message="tns:GetPortfolioByUserNameSoapIn" />
+      <wsdl:output message="tns:GetPortfolioByUserNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsValidUser">
+      <wsdl:input message="tns:IsValidUserSoapIn" />
+      <wsdl:output message="tns:IsValidUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddStockToCustomerPortfolio">
+      <wsdl:input message="tns:AddStockToCustomerPortfolioSoapIn" />
+      <wsdl:output message="tns:AddStockToCustomerPortfolioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveStockFromCustomerPortfolio">
+      <wsdl:input message="tns:RemoveStockFromCustomerPortfolioSoapIn" />
+      <wsdl:output message="tns:RemoveStockFromCustomerPortfolioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeIDByUserName">
+      <wsdl:input message="tns:GetEmployeeIDByUserNameSoapIn" />
+      <wsdl:output message="tns:GetEmployeeIDByUserNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStockPairInformation">
+      <wsdl:input message="tns:GetStockPairInformationSoapIn" />
+      <wsdl:output message="tns:GetStockPairInformationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeSummaryByName">
+      <wsdl:input message="tns:GetEmployeeSummaryByNameSoapIn" />
+      <wsdl:output message="tns:GetEmployeeSummaryByNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeDetailByEmpID">
+      <wsdl:input message="tns:GetEmployeeDetailByEmpIDSoapIn" />
+      <wsdl:output message="tns:GetEmployeeDetailByEmpIDSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PortfolioServiceSoap" type="tns:PortfolioServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetStockInfoByCompanyName">
+      <soap:operation soapAction="http://tempuri.org/GetStockInfoByCompanyName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStockInfoByCUSIP">
+      <soap:operation soapAction="http://tempuri.org/GetStockInfoByCUSIP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStockInfoByTicker">
+      <soap:operation soapAction="http://tempuri.org/GetStockInfoByTicker" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountriesByCompanyName">
+      <soap:operation soapAction="http://tempuri.org/GetCountriesByCompanyName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPortfolioByUserName">
+      <soap:operation soapAction="http://tempuri.org/GetPortfolioByUserName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsValidUser">
+      <soap:operation soapAction="http://tempuri.org/IsValidUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddStockToCustomerPortfolio">
+      <soap:operation soapAction="http://tempuri.org/AddStockToCustomerPortfolio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveStockFromCustomerPortfolio">
+      <soap:operation soapAction="http://tempuri.org/RemoveStockFromCustomerPortfolio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeIDByUserName">
+      <soap:operation soapAction="http://tempuri.org/GetEmployeeIDByUserName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStockPairInformation">
+      <soap:operation soapAction="http://tempuri.org/GetStockPairInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeSummaryByName">
+      <soap:operation soapAction="http://tempuri.org/GetEmployeeSummaryByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeDetailByEmpID">
+      <soap:operation soapAction="http://tempuri.org/GetEmployeeDetailByEmpID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PortfolioServiceSoap12" type="tns:PortfolioServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetStockInfoByCompanyName">
+      <soap12:operation soapAction="http://tempuri.org/GetStockInfoByCompanyName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStockInfoByCUSIP">
+      <soap12:operation soapAction="http://tempuri.org/GetStockInfoByCUSIP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStockInfoByTicker">
+      <soap12:operation soapAction="http://tempuri.org/GetStockInfoByTicker" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountriesByCompanyName">
+      <soap12:operation soapAction="http://tempuri.org/GetCountriesByCompanyName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPortfolioByUserName">
+      <soap12:operation soapAction="http://tempuri.org/GetPortfolioByUserName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsValidUser">
+      <soap12:operation soapAction="http://tempuri.org/IsValidUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddStockToCustomerPortfolio">
+      <soap12:operation soapAction="http://tempuri.org/AddStockToCustomerPortfolio" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveStockFromCustomerPortfolio">
+      <soap12:operation soapAction="http://tempuri.org/RemoveStockFromCustomerPortfolio" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeIDByUserName">
+      <soap12:operation soapAction="http://tempuri.org/GetEmployeeIDByUserName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStockPairInformation">
+      <soap12:operation soapAction="http://tempuri.org/GetStockPairInformation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeSummaryByName">
+      <soap12:operation soapAction="http://tempuri.org/GetEmployeeSummaryByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeeDetailByEmpID">
+      <soap12:operation soapAction="http://tempuri.org/GetEmployeeDetailByEmpID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PortfolioService">
+    <wsdl:port name="PortfolioServiceSoap" binding="tns:PortfolioServiceSoap">
+      <soap:address location="http://cbatest.uc.edu/10sis725/group2p/PortfolioManager/PortfolioService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PortfolioServiceSoap12" binding="tns:PortfolioServiceSoap12">
+      <soap12:address location="http://cbatest.uc.edu/10sis725/group2p/PortfolioManager/PortfolioService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

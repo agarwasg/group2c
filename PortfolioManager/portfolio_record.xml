@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Stocks>
+  <Coorelation>4.3361111111111121</Coorelation>
+  <Stock TickerSymbol="GOOG">
+    <ExpectedReturn>0.8</ExpectedReturn>
+    <StandarDeviation>0.2</StandarDeviation>
+  </Stock>
+  <Stock TickerSymbol="HPQ">
+    <ExpectedReturn>0.3</ExpectedReturn>
+    <StandarDeviation>0.18</StandarDeviation>
+  </Stock>
+</Stocks>

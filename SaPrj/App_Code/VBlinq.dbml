@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="vbleague" Class="VBlinqDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\vbleague.mdf;Integrated Security=True;User Instance=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="vbleagueConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Player" Member="Players">
+    <Type Name="Player">
+      <Column Name="PlrName" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PlrPhone" Type="System.String" DbType="NChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="PlrEmail" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="PlrGender" Type="System.Char" DbType="NChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="PlrHeight" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="PlrDOB" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="PlrLevel" Type="System.String" DbType="NChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="PlrMH" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="PlrOH" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="PlrST" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="PlrLB" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="PlrLeagues" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PlrTeam" Type="System.String" DbType="NChar(4)" CanBeNull="true" />
+      <Association Name="Level_Player" Member="Level" ThisKey="PlrLevel" OtherKey="LevCode" Type="Level" IsForeignKey="true" />
+      <Association Name="Team_Player" Member="Team" ThisKey="PlrTeam" OtherKey="TeamCode" Type="Team" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Level]" Member="Levels">
+    <Type Name="Level">
+      <Column Name="LevCode" Type="System.String" DbType="NChar(2) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="LevDesc" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Association Name="Level_Player" Member="Players" ThisKey="LevCode" OtherKey="PlrLevel" Type="Player" />
+      <Association Name="Level_Team" Member="Teams" ThisKey="LevCode" OtherKey="TeamLevel" Type="Team" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Team" Member="Teams">
+    <Type Name="Team">
+      <Column Name="TeamCode" Type="System.String" DbType="NChar(4) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TeamName" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="TeamComment" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TeamFoundationDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TeamLevel" Type="System.String" DbType="NChar(2)" CanBeNull="true" />
+      <Column Name="TeamActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TeamWins" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Version" Type="System.Data.Linq.Binary" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Association Name="Team_Player" Member="Players" ThisKey="TeamCode" OtherKey="PlrTeam" Type="Player" />
+      <Association Name="Level_Team" Member="Level" ThisKey="TeamLevel" OtherKey="LevCode" Type="Level" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
